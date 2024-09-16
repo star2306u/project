@@ -1,0 +1,32 @@
+﻿<Window x:Class="project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project"
+        mc:Ignorable="d"
+        Title="BETTERCORD" Height="450" Width="800" Background="#3483fa" FontFamily="Canva Sans">
+
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\SHASHANK\Desktop\vs\wpf\project\rgbg1.png" Stretch="Fill"/>
+        </Grid.Background>
+        <Border BorderThickness="2" BorderBrush="Black" CornerRadius="40" Padding="20" Background="#B3FFFFFF" Width="Auto" Height="Auto" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="57,57,0,0">
+            <StackPanel>
+                <Label Content="CREATE AN ACCOUNT" VerticalAlignment="Top" FontWeight="Black" FontSize="40" Margin="10"/>
+                <Label Content="Email" FontSize="27" FontWeight="SemiBold" FontFamily="Solway"/>
+                <TextBox Width="451"  FontSize="27" x:Name="Useremail" Background="#3483fa" Foreground="Black" Height="27" />
+                <Label Content="User name" FontSize="27" FontWeight="SemiBold" FontFamily="Solway"/>
+                <TextBox Width="451"  FontSize="27" x:Name="Username" Background="#3483fa" Foreground="Black" Height="27" />
+                <Label Content="Password" FontSize="27" FontWeight="SemiBold" FontFamily="Solway" />
+                <Grid>
+                    <PasswordBox Width="451" FontSize="27" x:Name="Password" Background="#3483fa" Foreground="Black" Height="27"/>
+                    <TextBox Width="451" FontSize="27" x:Name="Passwordtext" Background="#3483fa" Foreground="Black" Height="27" Visibility="Collapsed"/>
+                    <Button Width="32" Content="👁" Click="TogglePasswordVisibility" HorizontalAlignment="Left" Background="#3483fa" BorderBrush="#3483fa" Margin="425,2,0,1"/>
+                </Grid>
+            </StackPanel>
+
+        </Border>
+    </Grid>
+</Window>
