@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "project", "project.csproj", "{1308AA33-E428-4096-88CE-3FA79C3B728D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "project", "project.csproj", "{1308AA33-E428-4096-88CE-3FA79C3B728D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{15BAD975-E305-4AAB-A012-C6C300342756}"
+	ProjectSection(SolutionItems) = preProject
+		registrations_sussces.xaml = registrations_sussces.xaml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
