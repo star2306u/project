@@ -48,6 +48,20 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "SocketIOClient": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "SocketIoClientDotNet": {
+              "target": "Package",
+              "version": "[0.9.13, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

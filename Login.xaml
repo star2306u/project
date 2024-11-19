@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:project"
         mc:Ignorable="d"
-        Title="BETTERCORD" Height="945"
-        Width="1234" 
+        Title="BETTERCORD"  Height="{Binding Screen_Height}"
+        Width="{Binding Screen_Width}"
         FontSize="20"
         Foreground="White"
         WindowState="Maximized"
@@ -40,7 +40,7 @@
                                 <Button  Content="Forgot password" Background="Transparent" BorderBrush="Transparent" FontSize="20" HorizontalAlignment="Left"  Foreground="#a7d7e7" />
                                 <Label x:Name="forgot" Content="{Binding forget_pass}" Foreground="Red" FontSize="15" FontFamily="solway" />
                             </StackPanel>
-                            <Button VerticalAlignment="Center" Content="login" FontSize="30" Background="Transparent" BorderBrush="Transparent"  Foreground="#3498db" />
+                            <Button VerticalAlignment="Center" Content="login" FontSize="30" Background="Transparent" BorderBrush="Transparent"  Foreground="#3498db" Click="Button_Click" />
                         </StackPanel>
                         <Image Source="C:\Users\SHASHANK\Desktop\logo_solid-removebg-preview.png" Width="100" Height="100" VerticalAlignment="Top"/>
                     </StackPanel>

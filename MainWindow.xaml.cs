@@ -6,13 +6,29 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json; // or Newtonsoft.Json if preferred
+using System.Threading.Tasks;
+using System.Windows;
 
 namespace project
 {
+
     public partial class MainWindow : Window
     {
+        private readonly HttpClient _httpClient = new HttpClient();
         public double Screen_Width { get; set; }
         public double Screen_Height { get; set; }
+        public class MyDataModel
+        {
+            public string name { get; set; }
+            public string username  { get; set; }
+            public string email { get; set; }
+            public string password { get; set; }
+
+            // Add more properties as needed
+        }
 
         public MainWindow()
         {
@@ -22,12 +38,45 @@ namespace project
             this.Width = Screen_Width;
             this.Height = Screen_Height;
             this.DataContext = this;
+            // api
+
 
             Years();
             Month();
             UpdateDays(DateTime.Now.Year, DateTime.Now.Month);
         }
+        private async Task<string> SendDataAsync(string url, object data)
+        {
+            if (data == null)
+            {
+                MessageBox.Show("Data is null!");
+                return null;
+            }
 
+            try
+            {
+                // Serialize the data to JSON
+                string jsonData = JsonSerializer.Serialize(data);
+
+                // Create HttpContent from JSON data
+                HttpContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+                // Send POST request
+                HttpResponseMessage response = await _httpClient.PostAsync(url, content);
+
+                // Ensure the response was successful
+                response.EnsureSuccessStatusCode();
+
+                // Read the response content
+                string responseContent = await response.Content.ReadAsStringAsync();
+                return responseContent;
+            }
+            catch (HttpRequestException e)
+            {
+                MessageBox.Show($"Request error: {e.Message}");
+                return null;
+            }
+        }
         private void Years()
         {
             int currentYear = DateTime.Now.Year;
@@ -150,7 +199,7 @@ namespace project
         }
 
         
-        private void Signup(object sender, RoutedEventArgs e)
+        private async void Signup(object sender, RoutedEventArgs e)
         {
             bool isValid = true;
 
@@ -229,6 +278,22 @@ namespace project
             
             if (isValid)
             {
+                // URL of the API endpoint
+                string url = "http://localhost:3000/api/reg";
+                
+
+                // Prepare data to send
+                var data = new MyDataModel
+                {
+                    email = Useremail.Text,
+                    username = Username.Text,
+                    password = Password.Password,
+                    name = Name.Text,
+
+                };
+
+                // Send data and get the response
+                string result = await SendDataAsync(url, data);
                 Window1 secondwindow = new Window1();
                 //this.Visibility =Visibility.Hidden;
                 CloseWindowWithAnimation();
