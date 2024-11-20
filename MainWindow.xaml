@@ -5,28 +5,125 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:project"
         mc:Ignorable="d"
-        Title="BETTERCORD" Height="450" Width="800" Background="#3483fa" FontFamily="Canva Sans">
+        WindowState="Maximized"
+        Title="BETTERCORD" Height="{Binding Screen_Height}" Width="{Binding Screen_Width}" 
+        FontFamily="Canva Sans" >
+    <Window.Resources>
+        <Storyboard x:Key="WindowCloseAnimation">
+            <DoubleAnimation
+                Storyboard.TargetProperty="Opacity"
+                From="2.0" To="0.0"
+                Duration="0:0:1" />
+        </Storyboard>
+    </Window.Resources>
 
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
 
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\SHASHANK\Desktop\vs\wpf\project\rgbg1.png" Stretch="Fill"/>
-        </Grid.Background>
-        <Border BorderThickness="2" BorderBrush="Black" CornerRadius="40" Padding="20" Background="#B3FFFFFF" Width="Auto" Height="Auto" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="57,57,0,0">
-            <StackPanel>
-                <Label Content="CREATE AN ACCOUNT" VerticalAlignment="Top" FontWeight="Black" FontSize="40" Margin="10"/>
-                <Label Content="Email" FontSize="27" FontWeight="SemiBold" FontFamily="Solway"/>
-                <TextBox Width="451"  FontSize="27" x:Name="Useremail" Background="#3483fa" Foreground="Black" Height="27" />
-                <Label Content="User name" FontSize="27" FontWeight="SemiBold" FontFamily="Solway"/>
-                <TextBox Width="451"  FontSize="27" x:Name="Username" Background="#3483fa" Foreground="Black" Height="27" />
-                <Label Content="Password" FontSize="27" FontWeight="SemiBold" FontFamily="Solway" />
-                <Grid>
-                    <PasswordBox Width="451" FontSize="27" x:Name="Password" Background="#3483fa" Foreground="Black" Height="27"/>
-                    <TextBox Width="451" FontSize="27" x:Name="Passwordtext" Background="#3483fa" Foreground="Black" Height="27" Visibility="Collapsed"/>
-                    <Button Width="32" Content="👁" Click="TogglePasswordVisibility" HorizontalAlignment="Left" Background="#3483fa" BorderBrush="#3483fa" Margin="425,2,0,1"/>
-                </Grid>
-            </StackPanel>
+        <Grid>
 
-        </Border>
-    </Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="C:\Users\SHASHANK\Desktop\vs\wpf\project\—Pngtree—3d rendered envelopes featuring chat_7228140.jpg" Stretch="Fill"/>
+            </Grid.Background>
+            <Border BorderThickness="2" BorderBrush="DarkBlue" CornerRadius="50" Padding="20" Background="#B3000000" Width="Auto" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel>
+                    <Label Content="Create an account" VerticalAlignment="Top" HorizontalAlignment="Center" FontWeight="Medium"  FontSize="40" Margin="10" Foreground="White"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Email" FontSize="20" FontWeight="SemiBold" FontFamily="Solway" Foreground="White"/>
+                        <Label x:Name="Email_verify" Content="{Binding Email_verify}" FontFamily="Solway" FontSize="15" Foreground="Red"/>
+                    </StackPanel>
+
+                    <TextBox Width="451"  FontSize="20" x:Name="Useremail" Background="#B3000000" Foreground="White" Height="27" BorderBrush="DarkBlue" BorderThickness="2"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Your Name" FontSize="20" FontWeight="SemiBold" FontFamily="Solway" Foreground="White"/>
+                        <Label x:Name="Name_verify" Content="{Binding Name_verify}" FontFamily="Solway" FontSize="15" Foreground="Red"/>
+                    </StackPanel>
+                    <TextBox Width="451"  FontSize="20" x:Name="Name" Background="#B3000000" Foreground="White" Height="27" BorderBrush="DarkBlue" BorderThickness="2"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="User name" FontSize="20" FontWeight="SemiBold" FontFamily="Solway" Foreground="White"/>
+                        <Label x:Name="User_name" Content="{Binding User_verify}" FontFamily="Solway" FontSize="15" Foreground="Red"/>
+                    </StackPanel>
+
+                    <TextBox Width="451"  FontSize="20" x:Name="Username" Background="#B3000000" Foreground="White" Height="27" BorderBrush="DarkBlue" BorderThickness="2"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Password" FontSize="20" FontWeight="SemiBold" FontFamily="Solway" Foreground="White"/>
+                        <Label x:Name="Password_verify" Content="{Binding Password_verify}" FontFamily="Solway" FontSize="15" Foreground="Red"/>
+                    </StackPanel>
+
+                    <Grid>
+                        <PasswordBox Width="451" FontSize="20" x:Name="Password" Background="#B3000000" Foreground="White" Height="27" BorderBrush="DarkBlue" BorderThickness="2"/>
+                        <TextBox Width="451" FontSize="20" x:Name="Passwordtext" Background="#B3000000" Foreground="White" Height="27" Visibility="Collapsed" BorderBrush="DarkBlue" BorderThickness="2"/>
+                        <Button Width="24" Content="👁" Click="TogglePasswordVisibility" HorizontalAlignment="Left" Background="Transparent" Foreground="White" BorderBrush="Transparent" Margin="425,0,0,0" Height="22" VerticalAlignment="Center"/>
+                    </Grid>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Confirm Password" FontSize="20" FontWeight="SemiBold" FontFamily="Solway" Foreground="White"/>
+                        <Label x:Name="Repassword_verify" Content="{Binding Repassword_verify}" FontFamily="Solway" FontSize="15" Foreground="Red"/>
+                    </StackPanel>
+
+                    <Grid>
+                        <PasswordBox Width="451" FontSize="20" x:Name="rePassword" Background="#B3000000" Foreground="White" Height="27" BorderBrush="DarkBlue" BorderThickness="2"/>
+                        <TextBox Width="451" FontSize="20" x:Name="rePasswordtext" Background="#B3000000" Foreground="White" Height="27" Visibility="Collapsed" BorderBrush="DarkBlue" BorderThickness="2"/>
+                        <Button Width="24" Content="👁" Click="TogglePasswordVisibility1" HorizontalAlignment="Left" BorderBrush="Transparent" Background="Transparent" Foreground="White"  Margin="425,2,0,1" Height="22" VerticalAlignment="Top"/>
+                    </Grid>
+
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Date Of Birth" FontSize="20" FontWeight="SemiBold" FontFamily="Solway" Foreground="White"/>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Label x:Name="Day_verify" FontFamily="Solway" FontSize="15" Foreground="Red" Content="{Binding Day_verify}" Width="130" Margin="5"/>
+                            <Label x:Name="Month_verify" FontFamily="Solway" FontSize="15" Foreground="Red" Content="{Binding Month_verify}" Width="130" Margin="5"/>
+                            <Label x:Name="Year_verify" FontFamily="Solway" FontSize="15" Foreground="Red" Content="{Binding Year_verify}" Width="130" Margin="5"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <ComboBox x:Name="DayComboBox" Width="130" Margin="5" Foreground="Black" Background="Black" FontFamily="Solway" FontSize="20" BorderBrush="DarkBlue" BorderThickness="2">
+                                <ComboBox.Resources>
+                                    <Style TargetType="ComboBoxItem">
+                                        <Setter Property="Foreground" Value="White"/>
+                                        <Setter Property="Background" Value="Black"/>
+                                        <Setter Property="FontFamily" Value="Solway"/>
+                                        <Setter Property="FontSize" Value="20"/>
+                                    </Style>
+                                </ComboBox.Resources>
+                            </ComboBox>
+
+                            <ComboBox x:Name="MonthComboBox" Width="130" Margin="5" SelectionChanged="MonthComboBox_SelectionChanged" Foreground="Black" Background="Black" FontFamily="Solway" FontSize="20" BorderBrush="DarkBlue" BorderThickness="2">
+                                <ComboBox.Resources>
+                                    <Style TargetType="ComboBoxItem">
+                                        <Setter Property="Foreground" Value="White"/>
+                                        <Setter Property="Background" Value="Black"/>
+                                        <Setter Property="FontFamily" Value="Solway"/>
+                                        <Setter Property="FontSize" Value="20"/>
+                                    </Style>
+                                </ComboBox.Resources>
+                            </ComboBox>
+
+                            <ComboBox x:Name="YearComboBox" Width="130" Margin="5" SelectionChanged="YearComboBox_SelectionChanged" Foreground="Black" Background="#B3000000" FontFamily="Solway" FontSize="20" BorderBrush="DarkBlue" BorderThickness="2">
+                                <ComboBox.Resources>
+                                    <Style TargetType="ComboBoxItem">
+                                        <Setter Property="Foreground" Value="White"/>
+                                        <Setter Property="Background" Value="Black"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter Property="Background" Value="Black"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ComboBox.Resources>
+                            </ComboBox>
+                        </StackPanel>
+                        <Button Click="Signup" Content="Sign up" Width="100" Height="30" Margin="10" Background="#B3000000" FontSize="20" Foreground="White" FontWeight="DemiBold" BorderBrush="DarkBlue" BorderThickness="2" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Already have an account" x:Name="login" FontFamily="Solway" FontSize="15" Foreground="White"/>
+                        <Button Content="login" BorderBrush="Transparent" Background="Transparent" FontFamily="solway" FontSize="15" Foreground="DarkCyan" Click="Button_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </ScrollViewer>
 </Window>

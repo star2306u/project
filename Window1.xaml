@@ -1,0 +1,30 @@
+﻿<Window x:Class="project.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project"
+        mc:Ignorable="d"
+  Title="BETTERCORD" Height="{Binding Screen_Height}"
+  Width="{Binding Screen_Width}" 
+  FontSize="20"
+  Foreground="White"
+        WindowState="Maximized"
+  >
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="C:\Users\SHASHANK\Desktop\vs\wpf\project\—Pngtree—3d rendered envelopes featuring chat_7228140.jpg" Stretch="Fill"/>
+            </Grid.Background>
+            <Border BorderThickness="2" BorderBrush="DarkBlue" CornerRadius="20" Padding="10" Background="#B3000000" Width="Auto" Height="200" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Congratulations on surviving the registration process! 🥳" Foreground="White" FontFamily="solway" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal" >
+                        <Label Content="Please proceed to login now " Foreground="White" FontFamily="solway" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <Button  Content="login" Background="Transparent" BorderBrush="Transparent" Foreground="DarkCyan" Click="Button_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+</Window>

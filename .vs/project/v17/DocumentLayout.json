@@ -9,33 +9,49 @@
     {
       "AbsoluteMoniker": "D:0:0:{1308AA33-E428-4096-88CE-3FA79C3B728D}|project.csproj|c:\\users\\shashank\\desktop\\vs\\wpf\\project\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1308AA33-E428-4096-88CE-3FA79C3B728D}|project.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1308AA33-E428-4096-88CE-3FA79C3B728D}|project.csproj|c:\\users\\shashank\\desktop\\vs\\wpf\\project\\chatui.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{1308AA33-E428-4096-88CE-3FA79C3B728D}|project.csproj|solutionrelative:chatui.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1308AA33-E428-4096-88CE-3FA79C3B728D}|project.csproj|c:\\users\\shashank\\desktop\\vs\\wpf\\project\\chatui.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1308AA33-E428-4096-88CE-3FA79C3B728D}|project.csproj|solutionrelative:chatui.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1308AA33-E428-4096-88CE-3FA79C3B728D}|project.csproj|c:\\users\\shashank\\desktop\\vs\\wpf\\project\\login.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{1308AA33-E428-4096-88CE-3FA79C3B728D}|project.csproj|solutionrelative:login.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1308AA33-E428-4096-88CE-3FA79C3B728D}|project.csproj|c:\\users\\shashank\\desktop\\vs\\wpf\\project\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1308AA33-E428-4096-88CE-3FA79C3B728D}|project.csproj|solutionrelative:login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1308AA33-E428-4096-88CE-3FA79C3B728D}|project.csproj|c:\\users\\shashank\\desktop\\vs\\wpf\\project\\page1.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{1308AA33-E428-4096-88CE-3FA79C3B728D}|project.csproj|solutionrelative:page1.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1308AA33-E428-4096-88CE-3FA79C3B728D}|project.csproj|c:\\users\\shashank\\desktop\\vs\\wpf\\project\\page1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1308AA33-E428-4096-88CE-3FA79C3B728D}|project.csproj|solutionrelative:page1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1308AA33-E428-4096-88CE-3FA79C3B728D}|project.csproj|c:\\users\\shashank\\desktop\\vs\\wpf\\project\\window1.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{1308AA33-E428-4096-88CE-3FA79C3B728D}|project.csproj|solutionrelative:window1.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1308AA33-E428-4096-88CE-3FA79C3B728D}|project.csproj|c:\\users\\shashank\\desktop\\vs\\wpf\\project\\window1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1308AA33-E428-4096-88CE-3FA79C3B728D}|project.csproj|solutionrelative:window1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 256,
+      "VerticalTabListWidth": 100,
       "DocumentGroups": [
         {
-          "DockedWidth": 147,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 187,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAA5wBcAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T08:57:10.861Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -45,8 +61,119 @@
               "ToolTip": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-09-15T14:10:20.05Z",
+              "WhenOpened": "2024-10-11T16:39:54.24Z",
+              "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcBAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T08:57:10.861Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Window1.xaml",
+              "DocumentMoniker": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\Window1.xaml",
+              "RelativeDocumentMoniker": "Window1.xaml",
+              "ToolTip": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\Window1.xaml",
+              "RelativeToolTip": "Window1.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-24T13:50:25.03Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Window1.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\Window1.xaml.cs",
+              "RelativeDocumentMoniker": "Window1.xaml.cs",
+              "ToolTip": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\Window1.xaml.cs",
+              "RelativeToolTip": "Window1.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T13:51:27.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Login.xaml",
+              "DocumentMoniker": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\Login.xaml",
+              "RelativeDocumentMoniker": "Login.xaml",
+              "ToolTip": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\Login.xaml",
+              "RelativeToolTip": "Login.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-24T17:04:48.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\Login.xaml.cs",
+              "RelativeDocumentMoniker": "Login.xaml.cs",
+              "ToolTip": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\Login.xaml.cs",
+              "RelativeToolTip": "Login.xaml.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAYwIEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T17:46:02.114Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Chatui.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\Chatui.xaml.cs",
+              "RelativeDocumentMoniker": "Chatui.xaml.cs",
+              "ToolTip": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\Chatui.xaml.cs",
+              "RelativeToolTip": "Chatui.xaml.cs",
+              "ViewState": "AgIAADEBAAAAAAAAAAAAAHgBAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T03:20:11.675Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Chatui.xaml",
+              "DocumentMoniker": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\Chatui.xaml",
+              "RelativeDocumentMoniker": "Chatui.xaml",
+              "ToolTip": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\Chatui.xaml",
+              "RelativeToolTip": "Chatui.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-12T05:09:32.25Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Page1.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\Page1.xaml.cs",
+              "RelativeDocumentMoniker": "Page1.xaml.cs",
+              "ToolTip": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\Page1.xaml.cs",
+              "RelativeToolTip": "Page1.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T03:22:56.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Page1.xaml",
+              "DocumentMoniker": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\Page1.xaml",
+              "RelativeDocumentMoniker": "Page1.xaml",
+              "ToolTip": "C:\\Users\\SHASHANK\\Desktop\\vs\\wpf\\project\\Page1.xaml",
+              "RelativeToolTip": "Page1.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-13T03:21:40.33Z"
             }
           ]
         }
