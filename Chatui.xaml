@@ -7,7 +7,8 @@
         mc:Ignorable="d"
                 FontFamily="solway"
         Height="{Binding Screen_Height}" 
-        Width="{Binding Screen_Width}">
+        Width="{Binding Screen_Width}"
+        WindowState="Maximized">
     <Window.Resources>
         <Storyboard x:Key="CollapseSidebar">
             <DoubleAnimation Storyboard.TargetName="SidebarGrid" 

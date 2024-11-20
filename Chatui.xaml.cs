@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,6 +22,8 @@ namespace project
 
     public partial class Chatui : Window
     {
+        public string myname = Application.Current.Properties["myusername"] as string;
+        public string myid = Application.Current.Properties["myuserid"] as string; //my id
         public double Screen_Width { get; set; }
         public double Screen_Height { get; set; }
         public ObservableCollection<Unread> Images { get; set; }
@@ -33,7 +36,7 @@ namespace project
         {
 
             InitializeComponent();
-            LoadFriendData("83d930a7-490c-4a12-b083-94e0eb5639f8"); //83d930a7-490c-4a12-b083-94e0eb5639f8
+            LoadFriendData(myid); //83d930a7-490c-4a12-b083-94e0eb5639f8
             Screen_Width = SystemParameters.PrimaryScreenWidth;
             Screen_Height = SystemParameters.PrimaryScreenHeight;
             this.Width = Screen_Width;
@@ -262,14 +265,20 @@ namespace project
             SearchPopup.IsOpen = true;
         }
 
-        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        private async void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             ResultsPanel.Children.Clear();
 
-            if (FriendTextBox.Text == "sahil")
+            string username = FriendTextBox.Text; // TextBox for entering the username
+
+            if (string.IsNullOrWhiteSpace(username))
             {
-                for (int i = 0; i < 5; i++)
-                {
+            }
+
+            var friendData = await FindFriendDataAsync (username);
+            if (friendData != null)
+            {
+
                     StackPanel friendPanel = new StackPanel
                     {
                         Orientation = Orientation.Horizontal,
@@ -290,7 +299,7 @@ namespace project
 
                     Label nameLabel = new Label
                     {
-                        Content = "Friend " + (i + 1),
+                        Content = friendData.User_Name,
                         VerticalAlignment = VerticalAlignment.Center,
                         Width = 110,
                     };
@@ -300,7 +309,7 @@ namespace project
                         Content = "Add",
                         Width = 50,
                         Margin = new Thickness(10, 0, 0, 0),
-                        Tag = "friendID123"
+                        Tag = friendData
                     };
 
                     addButton.Click += AddButton_Click; // event for click for this button  
@@ -309,7 +318,7 @@ namespace project
                     friendPanel.Children.Add(addButton);
 
                     ResultsPanel.Children.Add(friendPanel);
-                }
+                
             }
             else
             {
@@ -334,16 +343,42 @@ namespace project
         private void FriendPopup_Closed(object sender, EventArgs e)
         {
             ResultsPanel.Children.Clear();
+
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e)
+        private async void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            // Get the button that was clicked
             Button clickedButton = sender as Button;
 
-            if (clickedButton != null)
+            // Ensure the button and its tag are valid
+            if (clickedButton == null || clickedButton.Tag == null)
             {
-                string uniqueId = clickedButton.Tag.ToString();
-                MessageBox.Show($"Button clicked for friend with ID: {uniqueId}");
+                MessageBox.Show("Failed to retrieve friend data.");
+                return;
+            }
+
+            // Extract the friend data from the button's Tag property
+            dynamic friendData = clickedButton.Tag; // It is data we get from api 
+            string fromId = myid; // Current user's ID
+            string toId = friendData.User_Id; // Friend's ID
+            string username = myname; // Current user's name
+            string userName = friendData.User_Name; // Friend's name
+
+
+
+            bool isSuccess = await SaveFriendAsync(fromId, toId, username, userName);
+
+            if (isSuccess)
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    AddGrid1Image("C:\\Users\\SHASHANK\\Desktop\\random.jpg", toId, userName);
+                });
+            }
+            else
+            {
+                MessageBox.Show("Failed to save friend. Please try again.");
             }
         }
 
@@ -415,5 +450,97 @@ namespace project
                 MessageBox.Show(hlo);
             }
         }
+        // friend serch api 
+        public class FriendData
+        {
+            public string? User_Id { get; set; }
+            public string? User_Name { get; set; }
+        }
+
+        public class ApiResponse
+        {
+            public FriendData? Data { get; set; }
+            public string? Message { get; set; }
+            public string? Error { get; set; }
+        }
+
+        public async Task<FriendData?> FindFriendDataAsync(string username)
+        {
+            try
+            {
+                using HttpClient client = new HttpClient();
+                string apiUrl = "http://localhost:3000/api/friends/get";
+
+                // Prepare request payload
+                var requestData = new { username };
+
+                // Make the POST request
+                HttpResponseMessage response = await client.PostAsJsonAsync(apiUrl, requestData);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // Parse the response
+                    var result = await response.Content.ReadFromJsonAsync<ApiResponse>();
+                    return result?.Data;
+                }
+                else
+                {
+                    // Handle non-success response
+                    Console.WriteLine($"Error: {response.StatusCode}");
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception: {ex.Message}");
+                return null;
+            }
+        }
+        public async Task<bool> SaveFriendAsync(string fromId, string toId, string username, string userName)
+        {
+            try
+            {
+                using HttpClient client = new HttpClient();
+                string apiUrl = "http://localhost:3000/api/friends/save"; // Replace with your server URL
+
+                // Prepare request payload
+                var requestData = new
+                {
+                    fromid = fromId,
+                    toid = toId,
+                    username = username,
+                    user_name = userName
+                };
+
+                // Make the POST request
+                HttpResponseMessage response = await client.PostAsJsonAsync(apiUrl, requestData);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // Parse the JSON response
+                    var resp = await response.Content.ReadAsStringAsync();
+                    // Deserialize the response
+                    var result = JsonConvert.DeserializeObject<ApiResponsesavefriend>(resp);
+
+                    // Check the result
+                    if (result != null && result.Success == 1)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception: {ex.Message}");
+                return false;
+            }
+        }
+
+        public class ApiResponsesavefriend
+        {
+            public int Success { get; set; }
+        }
+
     }
 }
