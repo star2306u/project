@@ -11,3 +11,5 @@ constant>credentials.js
 
 ###### step 3:
 npm run dev
+
+[Only backend link](https://github.com/UditSax3na/Bettercord_backend)
